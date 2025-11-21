@@ -48,9 +48,10 @@ public class JDBC_GUI extends JFrame {
 
     private void connectToDatabase() {
         try {
-            String url = "jdbc:sqlserver://karthik\\sqlexpress; databaseName=JDBC; encrypt=true; trustServerCertificate=true";
-            String user = "sa";
-            String password = "Karthik@123";
+            // WE NEED TO MODIFY THE URL, USER, PASSWORD
+            String url = "jdbc:sqlserver://AUTHENICATE_USERNAME\\sqlexpress; databaseName=""; encrypt=true; trustServerCertificate=true"; 
+            String user = "DB_USERNAME";
+            String password = "DB_PASSWORD";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             con = DriverManager.getConnection(url, user, password);
             st = con.createStatement();
@@ -205,3 +206,4 @@ public class JDBC_GUI extends JFrame {
         SwingUtilities.invokeLater(JDBC_GUI::new);
     }
 }
+
